@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Generic Business Name Generator</title>
+    <style>
+
+      body {
+        font-family: helvetica;
+        position: relative;
+        margin-top: 5rem;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .button {
+        color: black;
+        border: 2px solid black;
+        font-weight: 600;
+        padding: 15px 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 5rem;
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="logo"><img width="150" height="150" src="images/every-corporation.png" /></div>
+      <h1 id="name">Signature Performance</h1>
+      <a class="button secondary" href="#" onclick="location.reload(true);">Too Specific!</a>
+    </div>
+
+
+    <script>
+      var descriptor = [
+        "Diversified",
+        "Optimal",
+        "Strategic",
+        "Integrated",
+        "ACME",
+        "Collective",
+        "Capital",
+        "Dynamic",
+        "Wholistic",
+        "Synergistic",
+        "Aligned",
+        "Global",
+        "Proactive",
+        "Sustainable",
+        "Business",
+        "Creative",
+        "Granular",
+        "Mindshare",
+        "Seamless",
+        "Turnkey",
+        "Virtual",
+        "Elastic",
+        "Professional",
+        "Network",
+        "Maximum",
+        "Ethical",
+        "Responsible",
+        "Adaptive",
+        "Alternative",
+        "Compatible",
+        "Functional",
+        "Signature"
+      ];
+
+      var type = [
+        "Solutions",
+        "Industries",
+        "Opportunities",
+        "Services",
+        "Holdings",
+        "Corporation",
+        "Partners",
+        "Dynamics",
+        "Wares",
+        "Microsystems",
+        "Systems",
+        "Arts",
+        "Works",
+        "Utilities",
+        "Synergies",
+        "Ecosystems",
+        "Analytics",
+        "Enterprises",
+        "Fulfilment",
+        "Innovations",
+        "Logistics",
+        "Outsourcing",
+        "Touchpoints",
+        "Securities",
+        "Investments",
+        "Associates",
+        "Labs",
+        "Ventures",
+        "Worldwide",
+        "Unlimited",
+        "Brands",
+        "Productions",
+        "Enablement",
+        "Transformations",
+        "Processing",
+        "Concepts",
+        "Capital",
+        "Performance"
+      ];
+
+      var firstItem = descriptor[Math.floor(Math.random()*descriptor.length)];
+      var secondItem = type[Math.floor(Math.random()*type.length)];
+
+      document.getElementById("name").innerHTML = firstItem + ' ' + secondItem;
+    </script>
+
+  </body>
+</html>
