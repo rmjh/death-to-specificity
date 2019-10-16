@@ -15,12 +15,28 @@
         text-align: center;
       }
       .button {
-        color: black;
         border: 2px solid black;
+        color: black;
+        display: inline-block;
         font-weight: 600;
         padding: 15px 20px;
         text-decoration: none;
         text-transform: uppercase;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+      }
+      .button.primary:hover, .button.primary:focus, .button.primary:active {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+      .button.primary {
+        background-color: black;
+        color: white;
+        margin-left: 2rem;
       }
       h1 {
         font-size: 3.5rem;
@@ -31,9 +47,10 @@
   </head>
   <body>
     <div class="container">
-      <div id="logo"><img width="150" height="150" src="images/every-corporation.png" /></div>
+      <img id="logo" width="150" height="150" src="" />
       <h1 id="name">Signature Performance</h1>
       <a class="button secondary" href="#" onclick="location.reload(true);">Way Too Specific!</a>
+      <a id="domain" class="button primary" href="">Start Solutioneering</a>
     </div>
 
     <script>
@@ -113,11 +130,38 @@
         "Performance"
       ];
 
+      var logo = [
+        "building",
+        "cube",
+        "cubes",
+        "diamond",
+        "globe",
+        "leaf",
+        "orb",
+      ];
+
       var firstItem = descriptor[Math.floor(Math.random()*descriptor.length)];
       var secondItem = type[Math.floor(Math.random()*type.length)];
+      var logoChoice = logo[Math.floor(Math.random()*logo.length)];
+      var imageURL = 'images/' + logoChoice + '.png';
+      var domainSearch = "https://www.hover.com/domains/results?utf8=✓&q=" + firstItem.toLowerCase() + secondItem.toLowerCase() + ".biz";
+      console.log(domainSearch);
 
       document.getElementById("name").innerHTML = firstItem + ' ' + secondItem;
+      document.getElementById("logo").src =  imageURL;
+      document.getElementById("domain").href =  domainSearch;
+
     </script>
+
+    <!-- If you're reading this then you are probably two things:
+
+    1. super underwhelmed by the simplicity of this page
+    - and -
+    2. the type of person we want at Daake.
+
+    If that's true shoot Rob Heggen an email - rheggen [at] daake [dot] com - to
+    talk about a position in our interactive department. -->
+
 
   </body>
 </html>
